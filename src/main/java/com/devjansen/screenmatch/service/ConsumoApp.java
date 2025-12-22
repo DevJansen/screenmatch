@@ -27,6 +27,4 @@ public class ConsumoApp {
         return json;
     }
 
-
-
 }
