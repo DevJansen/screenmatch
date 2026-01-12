@@ -3,12 +3,13 @@ package com.devjansen.screenmatch.model;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public record DadosSerie(
+import java.util.List;
 
-        @JsonAlias("Title") String titulo,
-        @JsonAlias("totalSeasons") Integer totalTemporadas,
-        @JsonAlias("imdbRating") String avaliacao
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record DadosTemporada(
+
+        @JsonAlias("Season") Integer numero,
+        @JsonAlias("Episodes") List<DadosEpisodio> episodios
 
 ) {
 }

@@ -1,15 +1,17 @@
 package com.devjansen.screenmatch;
 
-import com.devjansen.screenmatch.model.DadosSerie;
-import com.devjansen.screenmatch.service.ConsumoApi;
-import com.devjansen.screenmatch.service.ConverteDados;
+import com.devjansen.screenmatch.model.DadosTemporada;
+import com.devjansen.screenmatch.principal.Principal;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @SpringBootApplication
 public class ScreenmatchApplication implements CommandLineRunner {
-	//http://www.omdbapi.com/?i=tt3896198&apikey=f7c802ea
+
 	public static void main(String[] args) {
 		SpringApplication.run(ScreenmatchApplication.class, args);
 	}
@@ -17,12 +19,9 @@ public class ScreenmatchApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		ConsumoApi consumoApi = new ConsumoApi();
-		String json = consumoApi.obterDados("http://www.omdbapi.com/?t=gilmore+girls&apikey=f7c802ea");
+		Principal principal = new Principal();
+		principal.exibeMenu();
 
-		ConverteDados conversor = new ConverteDados();
-		DadosSerie dados = conversor.obterDados(json, DadosSerie.class);
-		System.out.println(dados);
 
 	}
 }
