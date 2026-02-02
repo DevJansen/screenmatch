@@ -1,19 +1,15 @@
 package com.devjansen.screenmatch;
 
-import com.devjansen.screenmatch.model.DadosTemporada;
 import com.devjansen.screenmatch.principal.Principal;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @SpringBootApplication
-public class ScreenmatchApplication implements CommandLineRunner {
+public class Startup implements CommandLineRunner {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ScreenmatchApplication.class, args);
+		SpringApplication.run(Startup.class, args);
 	}
 
 	@Override
